@@ -1,0 +1,12 @@
+- hosts: localhost 
+  tasks:
+  - import_role:
+      name: abdennour.golang
+    become: yes
+    vars:
+      golang_version: "1.14"
+      golang_packages:
+      - github.com/gorilla/mux
+      - go.mongodb.org/mongo-driver/mongo
+      golang_users:
+      - "YOUR_USERNAME" # "{{ ansible_ssh_user}}" might be suitable
